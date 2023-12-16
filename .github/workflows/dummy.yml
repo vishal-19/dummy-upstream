@@ -4,8 +4,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-name: call the other repo
-env:
+     - name: call the other repo
+    env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         EVENT: workflow_dispatch
         ORG: vishal-19
