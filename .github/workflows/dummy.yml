@@ -1,3 +1,5 @@
+on:
+  workflow_dispatch:
 name: call the other repo
 env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
