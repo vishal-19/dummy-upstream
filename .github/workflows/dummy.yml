@@ -1,5 +1,6 @@
+name: Manual workflow
 on:
-  workflow_dispatch:
+  repository_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
