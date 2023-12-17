@@ -2,7 +2,7 @@ name: Trigger workfloww
 on:
   push: { branches: ["main"] }
 jobs:
-  build:
+  dispatch:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -13,5 +13,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer ${GITHUB_TOKEN}" -H "Accept: application/vnd.github.everest-preview+json" "https://github.com/vishal-19/github-actions-verification/actions/workflows/manual.yml/dispatches"
+          curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer ${GITHUB_TOKEN}"  --request POST \
+            --data '{"event_type": "perf_test", "client_payload": { "foo": "bar" }}' "https://github.com/vishal-19/github-actions-verification/actions/workflows/manual.yml/dispatches"
 
