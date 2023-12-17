@@ -4,10 +4,7 @@ on:
 jobs:
   dispatch:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
+    permissions: write-all
     steps:
       - name: call the other repo
         env:
