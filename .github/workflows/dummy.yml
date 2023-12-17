@@ -10,5 +10,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer ${GITHUB_TOKEN}"  --request POST --data '{"event_type": "perf_test", "client_payload": { "environment": "stage" }}' "https://api.github.com/repos/vishal-19/github-actions-verification/actions/workflows/67837297/dispatches"
+          curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer ${GITHUB_TOKEN}"  --request POST --data '{"event_type": "perf_test", "client_payload": { "environment": "stage" }}' "https://api.github.com/repos/vishal-19/github-actions-verification/dispatches"
 
