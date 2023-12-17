@@ -10,5 +10,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -X POST -H "Content-Type: application/json" -H "User-Agent: GITHUB" -H "Authorization: token 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" --request POST --data '{"event_type": "perf_test"}' "https://api.github.com/repos/vishal-19/github-actions-verification/dispatches"
+          curl -X POST -H "Content-Type: application/json" -H "User-Agent: GITHUB" -H "Authorization: Bearer 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" --request POST --data '{"event_type": "perf_test"}' "https://api.github.com/repos/vishal-19/github-actions-verification/dispatches"
 
