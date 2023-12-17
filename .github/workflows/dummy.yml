@@ -1,4 +1,4 @@
-name: Trigger workfloww
+name: Dispatcher
 on:
   push: { branches: ["main"] }
 jobs:
@@ -13,6 +13,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer ${GITHUB_TOKEN}"  --request POST \
-            --data '{"event_type": "perf_test", "client_payload": { "foo": "bar" }}' "https://github.com/vishal-19/github-actions-verification/actions/workflows/manual.yml/dispatches"
+          curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer ${GITHUB_TOKEN}"  --request POST --data '{"event_type": "perf_test", "client_payload": { "foo": "bar" }}' "https://github.com/vishal-19/github-actions-verification/actions/workflows/manual.yml/dispatches"
 
